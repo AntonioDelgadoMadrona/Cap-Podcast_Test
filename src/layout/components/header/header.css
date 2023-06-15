@@ -1,0 +1,39 @@
+header {
+  width: 100vw;
+  height: 80px;
+  background-color: darkcyan;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+header ul li {
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li a:hover {
+  opacity: 0.8;
+}
