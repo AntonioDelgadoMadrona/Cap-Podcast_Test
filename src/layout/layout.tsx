@@ -10,7 +10,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main>
+        <div className="children-header">
+          <h3>Podcaster</h3>
+          <span>🟢</span>
+        </div>
+        {children}
+      </main>
       <Footer />
     </>
   );

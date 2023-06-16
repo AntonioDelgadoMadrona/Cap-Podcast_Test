@@ -1,0 +1,32 @@
+form.search-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-bar span {
+  font-size: 15px;
+  color: #fff;
+  background-color: darkcyan;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 10%;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  width: 200px;
+  height: 100%;
+  border: 1px solid #bdbdbd;
+  outline: none;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 10%;
+
+  &:focus {
+    border: 1px solid #1a73e8;
+  }
+}

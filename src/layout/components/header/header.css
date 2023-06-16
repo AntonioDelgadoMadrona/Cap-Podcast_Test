@@ -9,6 +9,10 @@ header {
   justify-content: space-between;
 }
 
+header nav {
+  display: contents;
+}
+
 header ul {
   width: 100%;
   height: 100%;
@@ -16,6 +20,7 @@ header ul {
   align-items: center;
   justify-content: center;
   list-style: none;
+  padding: 0;
 }
 
 header ul li {

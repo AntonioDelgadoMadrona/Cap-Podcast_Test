@@ -1,0 +1,15 @@
+.podcast-list {
+  width: 100%;
+  height: 100%;
+}
+
+.podcast-list section {
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  column-gap: 15px;
+  row-gap: 50px;
+  align-items: flex-start;
+}
