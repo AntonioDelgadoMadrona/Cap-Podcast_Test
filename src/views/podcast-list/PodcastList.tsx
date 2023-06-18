@@ -1,21 +1,18 @@
-// DEPENDENCIES
 // HOOKS
+import { usePodcastList } from "./hooks/usePodcastList";
 // COMPONENTS
 import { SearchBar } from "./components/search-bar/SearchBar";
 import { PodcastItem } from "./components/podcast-item/PodcastItem";
 // STYLES
 import "./PodcastList.css";
-import podcastItems from "../../assets/podcastList.json";
 
 export function PodcastList() {
-  const handleFilterPodcastList = (searchTerm: string) => {
-    console.log(searchTerm);
-  };
+  const { podcastItems, handleFilterPodcastList } = usePodcastList();
   return (
     <div className="podcast-list">
-      <SearchBar podcastListLength={podcastItems.content.length} podcastListHandler={handleFilterPodcastList} />
+      <SearchBar podcastListLength={podcastItems.length} podcastListHandler={handleFilterPodcastList} />
       <section>
-        {podcastItems.content.map((podcastItem) => (
+        {podcastItems.map((podcastItem) => (
           <PodcastItem key={podcastItem.id} podcast={podcastItem} />
         ))}
       </section>
