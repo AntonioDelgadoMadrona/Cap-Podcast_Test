@@ -3,9 +3,9 @@ import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 // HANDLERS
 import { getEpisodeInfoHandler } from "../../../api/handlers/episode-info.handler";
-// UTILS
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { checkUpdateDate } from "../../../utils/data-utils";
+import { useFetching } from "../../../hooks/useFetching";
 // TYPES
 import { EpisodeDetailsType, PodcastDetailsType } from "../../../types";
 
@@ -22,6 +22,7 @@ interface EpisodeInfoStorageType {
 /* eslint-disable react-hooks/exhaustive-deps */
 export function useEpisodeInfo() {
   const { id = "", episodeId = "" } = useParams();
+  const { setIsFetching } = useFetching();
   const [episodeInfoStorage, setEpisodeInfoStorage] = useLocalStorage<EpisodeInfoStorageType>("episodeInfo", {
     data: {},
     updatedAt: new Date(),
@@ -39,9 +40,11 @@ export function useEpisodeInfo() {
   }, []);
 
   const getEpisodeInfo = useCallback(() => {
+    setIsFetching(true);
     getEpisodeInfoHandler(id, episodeId).then((response) => {
       setEpisodeInfoStorage({ data: response, updatedAt: new Date() });
       setEpisodeInfo({ ...response });
+      setIsFetching(false);
     });
   }, []);
 

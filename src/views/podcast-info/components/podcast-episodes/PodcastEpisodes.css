@@ -79,11 +79,10 @@
 .podcast-episodes-body ul li > a {
   font-size: 14px;
   font-weight: 400;
-  color: #000;
+  color: darkcyan;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-decoration: none;
-  color: #1a73e8;
 }

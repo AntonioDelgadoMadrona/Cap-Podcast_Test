@@ -10,7 +10,6 @@
   height: auto;
   position: relative;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .podcast-list-item:hover {
@@ -19,7 +18,7 @@
 
 .podcast-list-item a {
   text-decoration: none;
-  color: inherit;
+  color: #000;
 }
 
 .podcast-list-item img {

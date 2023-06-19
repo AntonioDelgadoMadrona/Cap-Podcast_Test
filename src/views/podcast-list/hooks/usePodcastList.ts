@@ -2,10 +2,11 @@
 import { useState, useEffect, useCallback } from "react";
 // HANDLERS
 import { getPodcastListHandler } from "../../../api/handlers/podcast-list.handler";
-// TYPES
-import { PodcastListItemType } from "../../../types";
 import { useLocalStorage } from "../../../hooks/useLocalStorage";
 import { checkUpdateDate } from "../../../utils/data-utils";
+import { useFetching } from "../../../hooks/useFetching";
+// TYPES
+import { PodcastListItemType } from "../../../types";
 
 interface PodcastListStoragedType {
   data: PodcastListItemType[];
@@ -14,6 +15,7 @@ interface PodcastListStoragedType {
 
 /* eslint-disable react-hooks/exhaustive-deps */
 export function usePodcastList() {
+  const { setIsFetching } = useFetching();
   const [podcastListStoraged, setPodcastListStoraged] = useLocalStorage<PodcastListStoragedType>("podcastList", {
     data: [],
     updatedAt: new Date(),
@@ -28,9 +30,11 @@ export function usePodcastList() {
   }, []);
 
   const getPodcastList = useCallback(() => {
+    setIsFetching(true);
     getPodcastListHandler().then((response) => {
       setPodcastListStoraged({ data: response, updatedAt: new Date() });
       setPodcastItems([...response]);
+      setIsFetching(false);
     });
   }, []);
 

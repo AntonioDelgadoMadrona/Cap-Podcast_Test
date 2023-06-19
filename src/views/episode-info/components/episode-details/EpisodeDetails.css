@@ -33,7 +33,7 @@
 }
 
 .episode-details-audio > audio::-webkit-media-controls-panel {
-  background-color: #1a73e8;
+  background-color: darkcyan;
 }
 
 .episode-details-audio > audio::-webkit-media-controls-current-time-display,
