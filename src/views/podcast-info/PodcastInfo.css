@@ -1,0 +1,15 @@
+.podcast-info {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  column-gap: 50px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .podcast-info {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+}

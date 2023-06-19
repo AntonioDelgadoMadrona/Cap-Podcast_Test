@@ -15,14 +15,15 @@ export function Footer() {
           Antonio Delgado
         </Link>
       </p>
-      <span>Vite + React + TypeScript</span>
       <div>
         <Link to="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </Link>
+        +{" "}
         <Link to="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo" alt="React logo" />
         </Link>
+        +{" "}
         <Link to="https://www.typescriptlang.org/" target="_blank">
           <img src={tsLogo} className="logo" alt="TypeScript logo" />
         </Link>

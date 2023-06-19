@@ -4,3 +4,18 @@ export type PodcastListItemType = {
   image: string;
   name: string;
 };
+
+export type PodcastDetailsType = {
+  id: string;
+  artistName: string;
+  image: string;
+  name: string;
+  description: string;
+};
+
+export type PodcastEpisodeType = {
+  id: string;
+  name: string;
+  releaseDate: string;
+  duration: string;
+};

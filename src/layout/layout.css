@@ -19,3 +19,9 @@ main {
 .children-header h3 {
   color: darkcyan;
 }
+
+@media (max-width: 768px) {
+  main {
+    width: auto;
+  }
+}

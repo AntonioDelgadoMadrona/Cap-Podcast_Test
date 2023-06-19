@@ -1,6 +1,7 @@
 // DEPENDENCIES
 import { vi } from "vitest";
 import { render, screen } from "../../utils/test-utils";
+// COMPONENTS
 import { PodcastList } from "./PodcastList";
 // MOCKS
 vi.mock("./hooks/usePodcastList", () => ({
