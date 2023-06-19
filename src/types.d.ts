@@ -19,3 +19,10 @@ export type PodcastEpisodeType = {
   releaseDate: string;
   duration: string;
 };
+
+export type EpisodeDetailsType = {
+  id: string;
+  name: string;
+  previewUrl: string;
+  description: string;
+};

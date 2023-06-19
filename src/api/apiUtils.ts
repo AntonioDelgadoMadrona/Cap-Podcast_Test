@@ -1,5 +1,5 @@
 // TYPES
-import { PodcastDetailsType, PodcastEpisodeType, PodcastListItemType } from "../types";
+import { EpisodeDetailsType, PodcastDetailsType, PodcastEpisodeType, PodcastListItemType } from "../types";
 
 export function formatPodcastList(data: any[]): PodcastListItemType[] {
   return [...data].map((podcast) => ({
@@ -37,4 +37,14 @@ export function miliSecondsToMinutes(miliSeconds: number): string {
   const minutes = Math.floor(miliSeconds / 60000);
   const seconds = ((miliSeconds % 60000) / 1000).toFixed(0);
   return `${minutes}:${Number(seconds) < 10 ? "0" : ""}${seconds}`;
+}
+
+export function formatEpisodeDetails(data: any[], episodeId: string): EpisodeDetailsType {
+  const episodeDetails = data.find((item: any) => item.trackId === Number(episodeId));
+  return {
+    id: episodeDetails.trackId,
+    name: episodeDetails.trackName,
+    previewUrl: episodeDetails.previewUrl,
+    description: episodeDetails.description,
+  };
 }

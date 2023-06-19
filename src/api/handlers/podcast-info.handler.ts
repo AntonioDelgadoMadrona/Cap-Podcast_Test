@@ -6,10 +6,9 @@ import { formatPodcastDetails, formatPodcastEpisodes } from "../apiUtils";
 export async function getPodcastInfoHandler(podcastId: string) {
   const response = await getPodcastInfoService(podcastId);
   if (response?.contents) {
-    let podcastDetails = JSON.parse(response?.contents).results[0];
-    podcastDetails = formatPodcastDetails(podcastDetails);
-    let podcastEpisodes = JSON.parse(response?.contents).results.slice(1);
-    podcastEpisodes = formatPodcastEpisodes(podcastEpisodes);
+    const { results } = JSON.parse(response.contents);
+    const podcastDetails = formatPodcastDetails(results[0]);
+    const podcastEpisodes = formatPodcastEpisodes(results.slice(1));
     return {
       podcastDetails,
       podcastEpisodes,

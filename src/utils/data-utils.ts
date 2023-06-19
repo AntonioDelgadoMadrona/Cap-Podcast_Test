@@ -9,3 +9,8 @@ export function checkUpdateDate(updatedDate: Date | string) {
     return false;
   }
 }
+
+export function isHTML(description: string): boolean {
+  const doc = new DOMParser().parseFromString(description, "text/html");
+  return Array.from(doc.body.childNodes).some((node) => node.nodeType === 1);
+}

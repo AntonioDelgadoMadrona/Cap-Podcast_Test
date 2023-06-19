@@ -6,7 +6,8 @@ import { formatPodcastList } from "../apiUtils";
 export async function getPodcastListHandler() {
   const response = await getPodcastListService();
   if (response?.contents) {
-    return formatPodcastList(JSON.parse(response.contents)?.feed?.entry ?? []);
+    const { feed } = JSON.parse(response.contents);
+    return formatPodcastList(feed?.entry ?? []);
   } else {
     return [];
   }
