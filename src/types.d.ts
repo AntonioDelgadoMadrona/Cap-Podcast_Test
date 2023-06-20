@@ -21,7 +21,7 @@ export type PodcastEpisodeType = {
 };
 
 export type EpisodeDetailsType = {
-  id: string;
+  id: number;
   name: string;
   previewUrl: string;
   description: string;

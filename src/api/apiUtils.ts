@@ -1,7 +1,13 @@
 // TYPES
 import { EpisodeDetailsType, PodcastDetailsType, PodcastEpisodeType, PodcastListItemType } from "../types";
+import {
+  PodcastDetailsServerType,
+  PodcastEpisodeServerType,
+  PodcastListItemServerType,
+  EpisodeDetailsServerType,
+} from "./types";
 
-export function formatPodcastList(data: any[]): PodcastListItemType[] {
+export function formatPodcastList(data: PodcastListItemServerType[]): PodcastListItemType[] {
   return [...data].map((podcast) => ({
     id: podcast.id.attributes["im:id"],
     artistName: podcast["im:artist"].label,
@@ -10,8 +16,8 @@ export function formatPodcastList(data: any[]): PodcastListItemType[] {
   }));
 }
 
-export function formatPodcastDetails(data: object): PodcastDetailsType {
-  const { artistName, artworkUrl100, collectionId, collectionName }: any = data;
+export function formatPodcastDetails(data: PodcastDetailsServerType): PodcastDetailsType {
+  const { artistName, artworkUrl100, collectionId, collectionName } = data;
   return {
     artistName,
     id: collectionId,
@@ -21,7 +27,7 @@ export function formatPodcastDetails(data: object): PodcastDetailsType {
   };
 }
 
-export function formatPodcastEpisodes(data: any[]): PodcastEpisodeType[] {
+export function formatPodcastEpisodes(data: PodcastEpisodeServerType[]): PodcastEpisodeType[] {
   return [...data].map((episode) => {
     const { trackName, trackId, releaseDate = new Date(), trackTimeMillis = 10000 } = episode;
     return {
@@ -39,12 +45,12 @@ export function miliSecondsToMinutes(miliSeconds: number): string {
   return `${minutes}:${Number(seconds) < 10 ? "0" : ""}${seconds}`;
 }
 
-export function formatEpisodeDetails(data: any[], episodeId: string): EpisodeDetailsType {
-  const episodeDetails = data.find((item: any) => item.trackId === Number(episodeId));
+export function formatEpisodeDetails(data: EpisodeDetailsServerType[], episodeId: string): EpisodeDetailsType {
+  const episodeDetails = data.find((item) => item.trackId === Number(episodeId));
   return {
-    id: episodeDetails.trackId,
-    name: episodeDetails.trackName,
-    previewUrl: episodeDetails.previewUrl,
-    description: episodeDetails.description,
+    id: episodeDetails?.trackId || 0,
+    name: episodeDetails?.trackName || "",
+    previewUrl: episodeDetails?.previewUrl || "",
+    description: episodeDetails?.description || "",
   };
 }

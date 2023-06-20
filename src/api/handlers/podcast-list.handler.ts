@@ -8,7 +8,6 @@ export async function getPodcastListHandler() {
   if (response?.contents) {
     const { feed } = JSON.parse(response.contents);
     return formatPodcastList(feed?.entry ?? []);
-  } else {
-    return [];
   }
+  return [];
 }
