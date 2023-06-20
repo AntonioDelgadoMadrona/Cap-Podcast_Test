@@ -4,9 +4,9 @@
 
 DEFINITION
 
-For the realization of this project I have done it under a structural and creational design, always trying to encapsulate the code with a defined purpose. I have used to assemble the project with Vite, React, Context-API, TypeScript, Vitest/Jest, React Testing Library...
+For the realization of this project I have done it under a structural and creational design, always trying to encapsulate the code with a defined purpose. I have used to assemble the project Vite, React, Context-API, TypeScript, Vitest/Jest, React Testing Library...
 
-I decided to use vite, for its speed and lightness. It is one of the options recommended by the React official documentation.
+I decided to use Vite, for its speed and lightness. It is one of the options recommended by the React Official Docs.
 
 FACILITY
 
@@ -14,7 +14,7 @@ Podcast-React-Vite-TS_Test is developed in React with Vite, so for the installat
 
 PERFORMANCE
 
-To run the project on port 5173 i's necessary to go to the root of the project and execute "npm run dev". And go to http://127.0.0.1:5173/, Youe will see the application
+To run the project on port 5173 it's necessary go to the root of the project and execute "npm run dev". If you go to http://127.0.0.1:5173/, You will see the application.
 
 TESTING
 

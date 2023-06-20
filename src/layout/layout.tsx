@@ -1,3 +1,5 @@
+// DEPENDENCIES
+import { Link } from "react-router-dom";
 // HOOKS
 import { useFetching } from "../hooks/useFetching";
 // COMPONENTS
@@ -14,7 +16,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <Header />
       <main>
         <div className="children-header">
-          <h3>Podcaster</h3>
+          <Link to="/">
+            <h3>Podcaster</h3>
+          </Link>
           {isFetching && <Loader />}
         </div>
         {children}

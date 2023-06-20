@@ -20,6 +20,11 @@ main {
   color: darkcyan;
 }
 
+.children-header a {
+  width: max-content;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   main {
     width: auto;
